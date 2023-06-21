@@ -43,7 +43,7 @@ public class UserDao {
             	
             }
         } catch (SQLException e) {
-            	e.printStackTrace();
+            	//e.printStackTrace();
             }
          	return user;
     }
@@ -69,10 +69,27 @@ public class UserDao {
 	        
 	        return rowsAffected > 0;
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 	    
 	    return false;
+	}
+	
+	public String getPassword(int userId) throws SQLException {
+	    String password = null;
+
+	    // Create a SELECT query to get the password column value for the row with the matching user ID
+	    String query = "SELECT password FROM users WHERE id = ?";
+	    PreparedStatement preparedStatement = con.prepareStatement(query);
+	    preparedStatement.setInt(1, userId);
+
+	    // Execute the query and retrieve the result
+	    ResultSet resultSet = preparedStatement.executeQuery();
+	    if (resultSet.next()) {
+	        password = resultSet.getString("password");
+	    }
+
+	    return password;
 	}
 	
 	public boolean changeEmail(User user, HttpServletRequest request) {
@@ -106,7 +123,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -144,7 +161,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -182,7 +199,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -220,7 +237,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -257,7 +274,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -294,7 +311,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -332,7 +349,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -371,7 +388,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;
@@ -408,7 +425,7 @@ public class UserDao {
 	            }
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
 	    }
 
 	    return false;

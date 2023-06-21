@@ -31,7 +31,7 @@ public class CancelProductServlet extends HttpServlet {
 			response.sendRedirect("administrator.jsp");
 		} catch (ClassNotFoundException|SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		} 
 	}
 

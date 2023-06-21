@@ -50,7 +50,7 @@ public class AddProduct extends HttpServlet {
 	                    out.print("Si è verificato un errore");
 	                }
 	            } catch (ClassNotFoundException | SQLException e) {
-	                e.printStackTrace();
+	                //e.printStackTrace();
 	            }
 
 	        }

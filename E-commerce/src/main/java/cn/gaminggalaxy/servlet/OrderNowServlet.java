@@ -68,7 +68,7 @@ public class OrderNowServlet extends HttpServlet {
 
         } catch (ClassNotFoundException|SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		} 
 	}
     

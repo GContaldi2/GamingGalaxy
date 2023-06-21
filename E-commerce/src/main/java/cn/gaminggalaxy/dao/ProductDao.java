@@ -34,7 +34,8 @@ public class ProductDao {
 	            product = new Product(id, name, descr, price, image);
 	        }
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	    	//e.printStackTrace();
+	    	System.out.println(e.getMessage());
 	    }
 	    return product;
 	}
@@ -60,7 +61,8 @@ public class ProductDao {
 				products.add(row);
 			}
 		}catch(Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
 		return products;
@@ -112,7 +114,7 @@ public class ProductDao {
 	                row.setImage(rs.getString("image"));
 	            }
 	        } catch (Exception e) {
-	            e.printStackTrace();
+	            //e.printStackTrace();
 	            System.out.println(e.getMessage());
 	        }
 
@@ -136,7 +138,8 @@ public class ProductDao {
 				}
 			}
 		}catch(Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
 		return sum;
@@ -174,7 +177,8 @@ public class ProductDao {
 	        
 	        return rowsAffected > 0;
 	    } catch (SQLException e) {
-	        e.printStackTrace();
+	        //e.printStackTrace();
+	    	System.out.println(e.getMessage());
 	    }
 	    
 	    return false;
@@ -190,7 +194,7 @@ public class ProductDao {
             pst.execute();
             //result = true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             System.out.print(e.getMessage());
         }
         //return result;

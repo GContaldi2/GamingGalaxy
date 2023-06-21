@@ -55,7 +55,7 @@ public class changePriceServlet extends HttpServlet {
                     out.print("Aggiornamento fallito");
                 }
             } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
 			
 			

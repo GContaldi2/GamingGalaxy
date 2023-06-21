@@ -67,7 +67,7 @@ public class CheckOutServlet extends HttpServlet {
 			}
 		} catch (ClassNotFoundException|SQLException e) {
 			
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 

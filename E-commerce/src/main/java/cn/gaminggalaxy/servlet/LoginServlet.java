@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		        }
 
 		    } catch (ClassNotFoundException | SQLException e) {
-		        e.printStackTrace();
+		        //e.printStackTrace();
 		    }
 			
 		}

@@ -21,11 +21,12 @@ if (auth == null) {
         <tr>
             <td><strong>Nome:</strong> <%= auth.getName() %></td>
             <td> </td>
+            <td></td>
         </tr>
         <tr>
             <td><strong>Cognome:</strong> <%= auth.getCognome() %></td>
-            <td>
-            </td>
+            <td></td>
+            <td></td>
         </tr>
         
         
@@ -36,7 +37,7 @@ if (auth == null) {
             	<form action="change-email" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuova Email:</label>
+						<label><strong>Nuova Email:</strong></label>
 							<input type="text" class="form-control" name="modifica-email" placeholder="nuova email..." >
 					</div>
 					<div >
@@ -48,14 +49,25 @@ if (auth == null) {
             
             
             </td>
+            <td></td>
         </tr>
         <tr>
            <td><strong>Password:</strong> ********</td>
-            <td>
-            	<form action="change-password" method="post">
-		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
+            
+			
+			<td>
+				<form action="change-password" method="post">
+					<input type="hidden" name="user-id" value="<%=auth.getId()%>">
+					
+            
 		    		<div class="form-group">
-						<label>Nuova Password:</label>
+						<label><strong>Password Attuale:</strong></label>
+							<input type="password" class="form-control" name="password-attuale" placeholder="password..." required>
+					</div>
+			     
+		    		
+		    		<div class="form-group">
+						<label><strong>Nuova Password:</strong></label>
 							<input type="password" class="form-control" name="modifica-password" placeholder="nuova password..." >
 					</div>
 					<div >
@@ -76,7 +88,7 @@ if (auth == null) {
             	<form action="change-indirizzo" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuovo Indirizzo:</label>
+						<label><strong>Nuovo Indirizzo:</strong></label>
 							<input type="text" class="form-control" name="modifica-indirizzo" placeholder="via street n.X..." >
 					</div>
 					<div >
@@ -85,6 +97,9 @@ if (auth == null) {
 						
 			</form>
            </td>
+           <td>
+            
+           </td>
         </tr>
         <tr>
             <td><strong>Citta':</strong> <%= auth.getCity() %></td>
@@ -92,7 +107,7 @@ if (auth == null) {
             	<form action="change-citta" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuova Città:</label>
+						<label><strong>Nuova Citta':</strong></label>
 							<input type="text" class="form-control" name="modifica-citta" placeholder="citta'..." >
 					</div>
 					<div >
@@ -102,6 +117,7 @@ if (auth == null) {
             
             	</form>
             </td>
+            <td></td>
         </tr>
         <tr>
             <td><strong>CAP:</strong> <%= auth.getZipCode() %></td>
@@ -109,7 +125,7 @@ if (auth == null) {
             	<form action="change-cap" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuovo CAP:</label>
+						<label><strong>Nuovo CAP:</strong></label>
 							<input type="text" class="form-control" name="modifica-cap" placeholder="CAP..." >
 					</div>
 					<div >
@@ -122,6 +138,7 @@ if (auth == null) {
             
             
             </td>
+            <td></td>
         </tr>
         <tr>
             <td><strong>Provincia:</strong> <%= auth.getProvincia() %></td>
@@ -129,7 +146,7 @@ if (auth == null) {
             	<form action="change-provincia" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuova Provincia:</label>
+						<label><strong>Nuova Provincia:</strong></label>
 							<input type="text" class="form-control" name="modifica-provincia" placeholder="Provincia..." >
 					</div>
 					<div >
@@ -143,6 +160,7 @@ if (auth == null) {
             
             
             </td>
+            <td></td>
         </tr>
         <tr>
             <td><strong>Numero Carta:</strong> <%= maskCreditCard(auth.getCartNumber()) %></td><!-- Credit card number partially masked -->
@@ -150,7 +168,7 @@ if (auth == null) {
             	<form action="change-carta" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuova Carta:</label>
+						<label><strong>Nuovo Numero Carta:</strong></label>
 							<input type="text" class="form-control" name="modifica-carta" placeholder="XXXX-XXXX-XXXX-XXXXX..." >
 					</div>
 					<div >
@@ -163,6 +181,7 @@ if (auth == null) {
             
             
             </td>
+            <td></td>
         </tr>
  		<tr> 
  		    <td><strong>Scadenza:</strong> <%= auth.getMese() %></td>   
@@ -170,7 +189,7 @@ if (auth == null) {
  		    	<form action="change-mese" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuova Scadenza:</label>
+						<label><strong>Nuova Scadenza:</strong></label>
 							<input type="text" class="form-control" name="modifica-mese" placeholder="XX/XXXX..." >
 					</div>
 					<div >
@@ -181,6 +200,7 @@ if (auth == null) {
             	</form>
  		    
  		    </td>
+ 		    <td></td>
  		</tr> 
  		 <tr>
             <td><strong>CVV:</strong> ***</td> <!-- Password masked -->
@@ -188,7 +208,7 @@ if (auth == null) {
             	<form action="change-cvv" method="post">
 		    		<input type="hidden" name="user-id" value="<%=auth.getId()%>">
 		    		<div class="form-group">
-						<label>Nuovo CVV:</label>
+						<label><strong>Nuovo CVV:</strong></label>
 							<input type="text" class="form-control" name="modifica-cvv" placeholder="xxx..." >
 					</div>
 					<div >
@@ -200,6 +220,7 @@ if (auth == null) {
             
             
             </td>
+            <td></td>
         </tr>
     </table>
 </div>

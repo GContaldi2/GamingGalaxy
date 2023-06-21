@@ -55,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
                     out.print("Registration failed");
                 }
             } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
 
         }

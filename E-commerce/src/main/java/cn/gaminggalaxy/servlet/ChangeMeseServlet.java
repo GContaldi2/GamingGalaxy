@@ -64,7 +64,7 @@ public class ChangeMeseServlet extends HttpServlet {
                     out.print("Aggiornamento fallito");
                 }
             } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
 			
 	   }

@@ -37,6 +37,7 @@ public class OrderDao {
             pst.executeUpdate();
             result = true;
         } catch (SQLException e) {
+        	//e.printStackTrace();
             System.out.println(e.getMessage());
         }
         return result;
@@ -66,7 +67,7 @@ public class OrderDao {
                 list.add(order);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+        	//e.printStackTrace();
             System.out.println(e.getMessage());
         }
         return list;
@@ -102,7 +103,7 @@ public class OrderDao {
                 list.add(order);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+        	//e.printStackTrace();
             System.out.println(e.getMessage());
         }
         return list;
@@ -117,7 +118,7 @@ public class OrderDao {
             pst.execute();
             //result = true;
         } catch (SQLException e) {
-            e.printStackTrace();
+        	//e.printStackTrace();
             System.out.print(e.getMessage());
         }
         //return result;
