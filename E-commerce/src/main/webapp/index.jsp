@@ -27,12 +27,13 @@ if (cart_list != null) {
     <title>Welcome to GamingGalaxy</title>
     <%@include file="includes/head.jsp" %>
     
- 
+ 	<link rel="stylesheet" href="style/general.css" type="text/css">
     
 </head>
 <body>
     <%@include file="includes/navbar.jsp" %>
-
+    
+	<img class="full-width" src="images/banner.jpg" alt="benner">
     <div class="container">
         <div class="card-header my-3">TUTTI I PRODOTTI</div>
         <div class="row">
