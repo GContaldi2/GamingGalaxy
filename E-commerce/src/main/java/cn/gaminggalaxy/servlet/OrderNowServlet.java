@@ -39,12 +39,16 @@ public class OrderNowServlet extends HttpServlet {
                 ProductDao productDao = new ProductDao(DbCon.getConnection());
                 Product product = productDao.getProductById(Integer.parseInt(productId));
                 
+               
                 
                 Order orderModel = new Order();
                 orderModel.setId(Integer.parseInt(productId));
                 orderModel.setUid(auth.getId());
                 orderModel.setQunatity(productQuantity);
                 orderModel.setDate(formatter.format(date));
+                
+                double originalPrice = product.getPrice();
+                orderModel.setOriginalPrice(originalPrice);
 
                 OrderDao orderDao = new OrderDao(DbCon.getConnection());
                 boolean result = orderDao.insertOrder(orderModel);
