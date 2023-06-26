@@ -34,7 +34,9 @@
 	<div class="row">
 		<%
 			if( !products.isEmpty()){
-				for(Product p:products){%>
+				for(Product p:products){
+					 
+				%>
 					<div class="col-md-3 my-3">
 					<div class="card w-100" style="width: 18rem;">
 		  				<img class="card-img-top" src="images/products/<%=p.getImage()%>" alt="Card image cap">
@@ -61,7 +63,8 @@
 			
 			
 				</div>
-				<%}
+				<%
+				}
 			}
    
    		%>

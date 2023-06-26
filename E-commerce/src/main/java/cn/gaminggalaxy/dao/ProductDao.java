@@ -186,17 +186,40 @@ public class ProductDao {
 	
 	
 	public void cancelProduct(int id) {
-        //boolean result = false;
-        try {
-            query = "delete from products where id=?";
-            pst = this.con.prepareStatement(query);
-            pst.setInt(1, id);
-            pst.execute();
-            //result = true;
-        } catch (SQLException e) {
-            //e.printStackTrace();
-            System.out.print(e.getMessage());
-        }
-        //return result;
-    }
+	    try {
+	    	 // Seleziona il nome del prodotto
+	        String selectProductNameQuery = "SELECT name FROM products WHERE id=?";
+	        PreparedStatement selectPst = this.con.prepareStatement(selectProductNameQuery);
+	        selectPst.setInt(1, id);
+	        ResultSet rs = selectPst.executeQuery();
+	        String productName = null;
+	        if (rs.next()) {
+	            productName = rs.getString("name");
+	        }
+	        
+	     // Aggiorna il nome del prodotto nella tabella orders
+	        String updateOrdersQuery = "UPDATE orders SET originalName=? WHERE p_id=?";
+	        PreparedStatement updatePst = this.con.prepareStatement(updateOrdersQuery);
+	        updatePst.setString(1, productName);
+	        updatePst.setInt(2, id);
+	        updatePst.executeUpdate();
+	    	
+	    	
+	    	// Aggiorna il nome del prodotto nella tabella orders
+	        String updateOrders = "UPDATE orders SET p_id=NULL WHERE p_id=?";
+	        pst = this.con.prepareStatement(updateOrders);
+	      
+	        pst.setInt(1, id);
+	        pst.executeUpdate();
+
+	        // Elimina il prodotto dalla tabella products
+	        String deleteProductQuery = "DELETE FROM products WHERE Id=?";
+	        pst = this.con.prepareStatement(deleteProductQuery);
+	        pst.setInt(1, id);
+	        pst.executeUpdate();
+	    } catch (SQLException e) {
+	        System.out.print(e.getMessage());
+	    }
+	}
+
 }

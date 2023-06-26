@@ -8,6 +8,11 @@ public class Order extends Product{
 	private int qunatity;
 	private String date;
 	private Double originalPrice;
+	private String originalName;
+	
+
+
+
 	private User user;
 	
 	
@@ -78,6 +83,17 @@ public class Order extends Product{
 
 	public void setOriginalPrice(Double originalPrice) {
 		this.originalPrice = originalPrice;
+	}
+	
+	
+	public String getOriginalName() {
+		return originalName;
+	}
+
+
+
+	public void setOriginalName(String originalName) {
+		this.originalName = originalName;
 	}
 	
 }

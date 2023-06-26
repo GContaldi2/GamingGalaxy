@@ -49,6 +49,7 @@ public class OrderNowServlet extends HttpServlet {
                 
                 double originalPrice = product.getPrice();
                 orderModel.setOriginalPrice(originalPrice);
+            
 
                 OrderDao orderDao = new OrderDao(DbCon.getConnection());
                 boolean result = orderDao.insertOrder(orderModel);
